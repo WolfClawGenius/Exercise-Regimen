@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Active Circuit | 50+ Metabolic Routine</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">FitOver50</a>
+        <nav>
+            <a href="index.html">Overview</a>
+            <a href="circuit.html" class="active">Workout</a>
+            <a href="exercises.html">Exercise Library</a>
+        </nav>
+    </div>
+</header>
+
+<div class="timer-bar">
+    <span>Interval:</span>
+    <span class="timer-display" id="clock">00:45</span>
+    <button class="timer-btn" onclick="startTimer(45)">45s Work</button>
+    <button class="timer-btn timer-btn-subtle" onclick="startTimer(30)">30s Rest</button>
+    <button class="timer-btn timer-btn-reset" onclick="resetTimer()">Reset</button>
+</div>
+
+<main>
+    <h1>Active Routine</h1>
+    <p class="subtitle">Complete each station in sequence. Use the interval bar above to monitor work and rest periods.</p>
+
+    <div class="card">
+        <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/fmsJ_a5e9xQ" title="Chair Squats Demo" allowfullscreen></iframe>
+        </div>
+        <span class="badge badge-high">High Caloric Demand</span>
+        <h2>1. Chair Sit-to-Stands (Power Squat)</h2>
+        <p class="meta-row">Work: 45s | Rest: 30s</p>
+    </div>
+
+    <div class="card">
+        <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/Nn_pL9U2F6Q" title="Step Jacks Demo" allowfullscreen></iframe>
+        </div>
+        <span class="badge badge-high">Aerobic Pace</span>
+        <h2>2. Low-Impact Step Jacks</h2>
+        <p class="meta-row">Work: 45s | Rest: 30s</p>
+    </div>
+
+    <div class="card">
+        <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/a6YHbxd2Xmw" title="Incline Pushups Demo" allowfullscreen></iframe>
+        </div>
+        <span class="badge badge-high">Upper Body Strength</span>
+        <h2>3. Incline Wall / Counter Push-Ups</h2>
+        <p class="meta-row">Work: 40–45s | Rest: 30s</p>
+    </div>
+
+    <div class="card">
+        <div class="video-container">
+            <iframe src="https://www.youtube-nocookie.com/embed/baHchZ4Wd-8" title="Standing High Knees March Demo" allowfullscreen></iframe>
+        </div>
+        <span class="badge badge-high">Core / Aerobic Finish</span>
+        <h2>4. Standing March with Core Rotation</h2>
+        <p class="meta-row">Work: 45s | Rest: 60s (Round End)</p>
+    </div>
+</main>
+
+<script>
+    let countdown;
+    let timeLeft = 45;
+
+    function updateDisplay(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        document.getElementById("clock").innerText = 
+            `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+
+    function startTimer(duration) {
+        clearInterval(countdown);
+        timeLeft = duration;
+        updateDisplay(timeLeft);
+        countdown = setInterval(() => {
+            timeLeft--;
+            updateDisplay(timeLeft);
+            if (timeLeft <= 0) {
+                clearInterval(countdown);
+                alert("Time is up! Switch intervals.");
+            }
+        }, 1000);
+    }
+
+    function resetTimer() {
+        clearInterval(countdown);
+        updateDisplay(0);
+    }
+</script>
+
+</body>
+</html>

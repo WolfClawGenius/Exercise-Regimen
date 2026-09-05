@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labs Overview</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Health & Nutrition</a>
+      <nav>
+        <a href="index.html" class="active">Labs Overview</a>
+        <a href="meals.html">Meal Plan</a>
+        <a href="grocery.html">Grocery List</a>
+        <a href="prep.html">Microwave & Prep</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h1>Lab Results Breakdown</h1>
+    <p class="subtitle">Summary of recent blood work, metabolic profile, and doctor talking points.</p>
+
+    <div class="card">
+      <h2>Flagged Markers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Your Value</th>
+            <th>Reference Range</th>
+            <th>Status</th>
+            <th>Significance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fasting Glucose</strong></td>
+            <td>126 mg/dL</td>
+            <td>70–99 mg/dL</td>
+            <td><span class="badge badge-high">High</span></td>
+            <td>Fasting threshold for diabetes evaluation</td>
+          </tr>
+          <tr>
+            <td><strong>Total Cholesterol</strong></td>
+            <td>229 mg/dL</td>
+            <td>100–199 mg/dL</td>
+            <td><span class="badge badge-high">High</span></td>
+            <td>Overall cardiovascular risk contributor</td>
+          </tr>
+          <tr>
+            <td><strong>LDL (Bad) Cholesterol</strong></td>
+            <td>164 mg/dL</td>
+            <td>0–99 mg/dL</td>
+            <td><span class="badge badge-high">High</span></td>
+            <td>Elevated plaque-forming particles</td>
+          </tr>
+          <tr>
+            <td><strong>Triglycerides</strong></td>
+            <td>160 mg/dL</td>
+            <td>0–149 mg/dL</td>
+            <td><span class="badge badge-high">High</span></td>
+            <td>Circulating fat driven by carbs & insulin resistance</td>
+          </tr>
+          <tr>
+            <td><strong>HDL (Good) Cholesterol</strong></td>
+            <td>36 mg/dL</td>
+            <td>&gt;39 mg/dL</td>
+            <td><span class="badge badge-high">Low</span></td>
+            <td>Reduced protective lipid clearing</td>
+          </tr>
+          <tr>
+            <td><strong>Lymphocytes (Abs)</strong></td>
+            <td>3.9 x10³/µL</td>
+            <td>0.7–3.1 x10³/µL</td>
+            <td><span class="badge badge-high">Mild High</span></td>
+            <td>Likely reactive (recent bug, recovery, or tobacco irritation)</td>
+          </tr>
+          <tr>
+            <td><strong>Eosinophils (Abs)</strong></td>
+            <td>0.8 x10³/µL</td>
+            <td>0.0–0.4 x10³/µL</td>
+            <td><span class="badge badge-high">Mild High</span></td>
+            <td>Airway/mucosal irritation or mild allergies</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Doctor Discussion Checklist</h2>
+      <ul>
+        <li><strong>Hemoglobin A1c Test:</strong> Request an A1c to evaluate your 90-day blood sugar average rather than relying solely on a single morning draw.</li>
+        <li><strong>10-Year ASCVD Risk:</strong> Ask for your calculated risk score factoring in age 52, smoking status, and LDL of 164 mg/dL.</li>
+        <li><strong>Preventive Statin:</strong> Discuss whether a statin is indicated to stabilize arterial walls and reduce event risk.</li>
+        <li><strong>Follow-up CBC:</strong> Confirm if repeating the differential in 2–3 months is recommended to ensure lymphocytes have normalized.</li>
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
