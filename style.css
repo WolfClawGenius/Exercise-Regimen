@@ -53,8 +53,8 @@ header {
 	max-width: 900px;
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	gap: 28px;
 	padding: 12px 20px;
 }
 
@@ -67,7 +67,63 @@ header {
 
 nav {
 	display: flex;
+	flex: 1;
 	gap: 8px;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+
+.nav-group {
+	position: relative;
+}
+
+.nav-group summary {
+	list-style: none;
+	cursor: pointer;
+	display: inline-block;
+	padding: 8px 14px;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 0.95rem;
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+
+.nav-group summary::-webkit-details-marker {
+	display: none;
+}
+
+.nav-group summary::after {
+	content: " +";
+	color: var(--primary-light);
+}
+
+.nav-group[open] summary::after {
+	content: " −";
+}
+
+.nav-group summary:hover,
+.nav-group summary.active {
+	background-color: var(--primary-light);
+	color: #ffffff;
+}
+
+.nav-menu {
+	position: absolute;
+	top: calc(100% + 6px);
+	right: 0;
+	min-width: 190px;
+	padding: 6px;
+	background: var(--card-bg);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	z-index: 1001;
+}
+
+.nav-menu a {
+	display: block;
+	width: 100%;
 }
 
 nav a {
@@ -264,8 +320,19 @@ li {
     }
 
     nav {
-        flex-wrap: wrap;
+		width: 100%;
+		justify-content: flex-start;
     }
+
+	.nav-group {
+		position: static;
+	}
+
+	.nav-menu {
+		position: static;
+		margin-top: 4px;
+		box-shadow: none;
+	}
 
     main {
         padding: 0 14px;
