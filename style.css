@@ -175,6 +175,28 @@ li {
 	margin: 16px 0;
 	font-size: 0.95rem;
 }
+
+.macro-note {
+	background: #f0fdf4;
+	border-left: 4px solid #16a34a;
+	padding: 12px 16px;
+	border-radius: 4px;
+	margin: 16px 0 20px;
+	font-size: 0.9rem;
+}
+
+.macro-note a {
+	color: #166534;
+	font-weight: 600;
+}
+
+.macro {
+	color: var(--text-muted);
+	font-size: 0.78rem;
+	font-weight: 600;
+	line-height: 1.4;
+	margin-top: 6px;
+}
 /* Media & Timer Additions */
 .video-container {
     position: relative;
