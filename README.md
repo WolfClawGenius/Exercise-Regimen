@@ -38,7 +38,7 @@ This project uses plain HTML, CSS, and JavaScript. No build tools or dependencie
 2. Open `index.html` in a web browser.
 3. Use the navigation links to move between the workout, exercise, meal, grocery, and preparation pages.
 
-The pages share the styles in [`style.css`](style.css). The interval timer is implemented directly in [`circuit.html`](circuit.html).
+The pages share the styles in [`style.css`](assets/css/style.css). The interval timer is implemented directly in [`circuit.html`](circuit.html).
 
 ## Important note
 
