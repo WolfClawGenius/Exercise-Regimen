@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise Library | 28 Day Challenge</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The 28 Day Challenge: follow-along workouts, recovery days, and a simple path to build momentum." />
+  <title>28 Day Challenge | Fitness & Nutrition</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="challenge.css" />
 </head>
-<body>
+<body class="challenge-page">
 <header>
-    <div class="nav-container">
-        <a href="index.html" class="logo">Fitness & Nutrition</a>
-        <nav>
-            <a href="index.html">Home</a>
-            <details class="nav-group" open>
-                <summary class="active">Training</summary>
-                <div class="nav-menu">
-                    <a href="landing.html">Exercise Library</a>
-                    <a href="overview.html">Circuit Info</a>
-                    <a href="circuit.html">Workout</a>
-                    <a href="exercises.html">Exercises</a>
-                    <a href="28-challenge.html" class="active">28 Day Challenge</a>
-                </div>
-            </details>
-            <details class="nav-group">
-                <summary>Nutrition</summary>
-                <div class="nav-menu">
-                    <a href="meals.html">Meal Plan</a>
-                    <a href="grocery.html">Grocery List</a>
-                    <a href="prep.html">Prep Guide</a>
-                </div>
-            </details>
-        </nav>
-    </div>
+  <div class="nav-container">
+    <a href="index.html" class="logo">Fitness & Nutrition</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <details class="nav-group" open>
+        <summary class="active">Training</summary>
+        <div class="nav-menu">
+          <a href="landing.html">Exercise Library</a>
+          <a href="overview.html">Circuit Info</a>
+          <a href="circuit.html">Workout</a>
+          <a href="exercises.html">Exercises</a>
+          <a href="28-challenge.html" class="active">28 Day Challenge</a>
+        </div>
+      </details>
+      <details class="nav-group">
+        <summary>Nutrition</summary>
+        <div class="nav-menu">
+          <a href="meals.html">Meal Plan</a>
+          <a href="grocery.html">Grocery List</a>
+          <a href="prep.html">Prep Guide</a>
+        </div>
+      </details>
+    </nav>
+  </div>
 </header>
 <script src="nav.js"></script>
+
+<main class="challenge-main">
+  <section id="challenge-calendar" class="challenge-view">
+    <div class="challenge-hero">
+      <div class="challenge-hero-copy">
+        <p class="challenge-kicker"><span></span> Training program · 28 days</p>
+        <h1>Your next<br><em>28 days</em><br>start now.</h1>
+        <p class="challenge-lead">A follow-along program built to keep you moving. Pick a day, press play, and earn your next checkmark.</p>
+        <a class="challenge-primary" href="#schedule">View the schedule <span>↗</span></a>
+      </div>
+      <div class="challenge-hero-art"><img src="assets/challenge/page-01-background.webp" alt="28 Day Challenge cover artwork"><span>01<br><small>COMMIT TO THE PROCESS</small></span></div>
+    </div>
+    <div class="challenge-stats"><div><strong>28</strong><span>days of momentum</span></div><div><strong>24</strong><span>follow-along workouts</span></div><div><strong>04</strong><span>recovery days</span></div></div>
+    <div id="schedule" class="schedule-head"><div><p class="challenge-kicker">The program</p><h2>Choose your day.</h2></div><div class="challenge-progress"><span id="progress-label">0 / 28 complete</span><div><i id="progress-bar"></i></div></div></div>
+    <div class="challenge-filters"><div><button class="selected" data-filter="all">All days</button><button data-filter="workout">Workouts</button><button data-filter="rest">Recovery</button></div><span>4 weeks · 28 days</span></div>
+    <div id="day-grid" class="day-grid" aria-live="polite"></div>
+    <section class="bonus-banner"><img src="assets/challenge/page-33-background.webp" alt="Make-A-Wish Challenge artwork"><div><p class="challenge-kicker">Bonus day</p><h2>Go the extra mile.</h2><p>When you’re ready to test what four weeks of consistency can do, take on the Make-A-Wish challenge.</p><a class="challenge-dark" href="https://www.youtube.com/watch?v=EEV3tEz9hK8" target="_blank" rel="noopener">Watch bonus challenge ↗</a></div></section>
+  </section>
+
+  <section id="challenge-detail" class="challenge-view detail-view" hidden>
+    <a class="detail-back" href="28-challenge.html">← Back to schedule</a>
+    <div id="detail-content"></div>
+  </section>
+</main>
+<script src="challenge.js"></script>
+</body>
+</html>
