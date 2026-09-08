@@ -126,6 +126,11 @@ nav {
 	width: 100%;
 }
 
+.nav-submenu {
+	margin-left: 12px;
+	border-left: 2px solid var(--border);
+}
+
 nav a {
 	display: inline-block;
 	text-decoration: none;
