@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Warmup Library | FitOver50</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Warmup Grid & Filter Styles */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .warmup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .exercise-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .exercise-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .media-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0f172a;
+    }
+    .media-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .exercise-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .exercise-body h3 {
+      font-size: 1.05rem;
+      color: var(--primary);
+      margin: 8px 0 4px;
+    }
+    .cue-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .card-meta {
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo">FitOver50 & Nutrition</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="warmup.html" class="active">Warmups</a>
+      <a href="circuit.html">Workout</a>
+      <a href="exercises.html">Exercises</a>
+      <a href="meals.html">Meal Plan</a>
+      <a href="grocery.html">Grocery List</a>
+      <a href="prep.html">Prep Guide</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero-card">
+    <div class="hero-content">
+      <span class="badge badge-green">Joint Mobility • Circulation • Injury Prevention</span>
+      <h1>Full-Body Dynamic Warmup Library</h1>
+      <p class="hero-lead">
+        Prepare your tendons, lubricate joint capsules, and safely elevate core temperature with 18 ACE-curated mobility drills designed for longevity.
+      </p>
+      <div class="hero-actions">
+        <a href="#warmups" class="btn btn-primary">Browse All 18 Drills</a>
+        <a href="circuit.html" class="btn btn-secondary">Jump to Active Circuit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Controls -->
+  <div id="warmups">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCards('all')">All (18)</button>
+      <button class="filter-btn" onclick="filterCards('upper')">Upper Body</button>
+      <button class="filter-btn" onclick="filterCards('lower')">Lower Body</button>
+      <button class="filter-btn" onclick="filterCards('core')">Core & Spine</button>
+    </div>
+  </div>
+
+  <!-- 18 Warmup Exercises Grid -->
+  <div class="warmup-grid">
+
+    <!-- 1 -->
+    <div class="exercise-card" data-category="upper">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Arm+Circles" title="ACE Arm Circles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Shoulder Mobility</span>
+        <h3>1. Arm Circles (Small to Large)</h3>
+        <p class="cue-text">Gradually enlarge shoulder circles from small rotations to sweeping overhead crosses without arching the lower back.</p>
+        <div class="card-meta">
+          <span>Target: Deltoids / Cuff</span>
+          <span>10 reps each dir</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="exercise-card" data-category="upper">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Wall+Slides" title="ACE Wall Slides" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Scapular Rhythm</span>
+        <h3>2. Wall Slides (W to Y)</h3>
+        <p class="cue-text">Keep forearms and wrists sliding up a flat wall from a 'W' position into a full overhead 'Y' to prime the mid-traps.</p>
+        <div class="card-meta">
+          <span>Target: Scapula / Mid-Traps</span>
+          <span>10 slow reps</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="exercise-card" data-category="upper">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Chest+Stretch+Dynamic" title="ACE Dynamic Chest Opener" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Thoracic Opener</span>
+        <h3>3. Dynamic Chest Expander Hugs</h3>
+        <p class="cue-text">Alternate wrapping arms across your chest in a self-hug, then opening wide to retract scapulae and stretch pecs.</p>
+        <div class="card-meta">
+          <span>Target: Chest / Upper Back</span>
+          <span>12 reps alternating</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="exercise-card" data-category="upper">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Wrist+Mobility" title="ACE Wrist Circles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Forearm & Wrist</span>
+        <h3>4. Wrist Circles & Figure-8s</h3>
+        <p class="cue-text">Interlace fingers and roll wrists in continuous infinity-loop patterns to prime joints for counter or wall push-ups[cite: 1, 2].</p>
+        <div class="card-meta">
+          <span>Target: Wrists / Flexors</span>
+          <span>30 seconds</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="exercise-card" data-category="upper">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Shoulder+Rolls" title="ACE Shoulder Rolls" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Shoulder Elevation</span>
+        <h3>5. Dynamic Shoulder Rolls</h3>
+        <p class="cue-text">Lift shoulders smoothly up toward the ears, glide them down the back ribcage, and release accumulated upper back tension.</p>
+        <div class="card-meta">
+          <span>Target: Trapezius / Neck</span>
+          <span>10 rolls each dir</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="exercise-card" data-category="upper">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Neck+Mobility" title="ACE Neck Stretches" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Cervical Mobility</span>
+        <h3>6. Cervical Tilts & Half-Rolls</h3>
+        <p class="cue-text">Drop chin to chest and roll ear to shoulder smoothly. Avoid full backward head rolls to safeguard the cervical spine.</p>
+        <div class="card-meta">
+          <span>Target: Neck / Scalenes</span>
+          <span>6 rolls each side</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="exercise-card" data-category="core">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Cat+Cow+Warmup" title="ACE Cat Cow" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-green">Spinal Articulation</span>
+        <h3>7. Standing Cat-Cow</h3>
+        <p class="cue-text">Rest hands on upper thighs; flex the spine outward like a cat, then extend forward, drawing the sternum forward.</p>
+        <div class="card-meta">
+          <span>Target: Spinal Column</span>
+          <span>8 breath cycles</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="exercise-card" data-category="core">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Torso+Twist" title="ACE Torso Twists" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-green">Rotational Core</span>
+        <h3>8. Torso Rotations with Pivot</h3>
+        <p class="cue-text">Keep knees softly unlocked and pivot the trailing heel as your arms sweep comfortably across the body.</p>
+        <div class="card-meta">
+          <span>Target: Obliques / T-Spine</span>
+          <span>15 reps alternating</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="exercise-card" data-category="core">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Hip+Hinge" title="ACE Hip Hinge" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-green">Posterior Chain</span>
+        <h3>9. Standing Hip Hinge (Good Mornings)</h3>
+        <p class="cue-text">Place hands at temples, soft bend in knees, push the hips backward until hamstrings load, then return erect.</p>
+        <div class="card-meta">
+          <span>Target: Glutes / Hamstrings</span>
+          <span>10 controlled reps</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="exercise-card" data-category="core">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Side+Bend" title="ACE Side Bends" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-green">Lateral Core</span>
+        <h3>10. Standing Side Bend Reach</h3>
+        <p class="cue-text">Slide one hand down the outer thigh while sweeping the opposite arm overhead, maintaining an upright, neutral pelvis.</p>
+        <div class="card-meta">
+          <span>Target: Quadratus Lumborum</span>
+          <span>8 reps per side</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="exercise-card" data-category="core">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Hip+Circles" title="ACE Hip Circles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-green">Pelvic Alignment</span>
+        <h3>11. Pelvic Circles (Hula Hips)</h3>
+        <p class="cue-text">With hands on hips, trace wide circular patterns with the pelvis to lubricate lower lumbar joints and sacroiliac region.</p>
+        <div class="card-meta">
+          <span>Target: Pelvis / Sacroiliac</span>
+          <span>8 circles each way</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="exercise-card" data-category="core">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Woodchop" title="ACE Standing Woodchop" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-green">Diagonal Core</span>
+        <h3>12. Standing Dynamic Woodchopper</h3>
+        <p class="cue-text">Clasp hands and sweep diagonally from high shoulder down to opposing hip, pivoting feet to protect the knee.</p>
+        <div class="card-meta">
+          <span>Target: Anterior Sling / Abs</span>
+          <span>10 reps per side</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="exercise-card" data-category="lower">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Leg+Swings" title="ACE Anterior Leg Swings" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Hip Extension</span>
+        <h3>13. Supported Leg Swings (Front/Back)</h3>
+        <p class="cue-text">Lightly touch a wall for balance and swing one leg forward and backward like a pendulum to mobilize hip flexors.</p>
+        <div class="card-meta">
+          <span>Target: Hip Flexors / Glutes</span>
+          <span>12 swings each leg</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="exercise-card" data-category="lower">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Lateral+Leg+Swings" title="ACE Lateral Leg Swings" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Groin & Adductors</span>
+        <h3>14. Lateral Leg Swings (Side-to-Side)</h3>
+        <p class="cue-text">Facing a wall, swing your leg smoothly across the midline and out to the side to warm inner and outer hip musculature.</p>
+        <div class="card-meta">
+          <span>Target: Adductor / Abductor</span>
+          <span>10 swings each leg</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="exercise-card" data-category="lower">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Hip+Openers" title="ACE High Knee Hip Openers" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Hip Capsule</span>
+        <h3>15. Gate Openers (Hip Openers)</h3>
+        <p class="cue-text">Lift knee to 90 degrees, trace an arc outward to open the hip capsule, and step down smoothly before alternating.</p>
+        <div class="card-meta">
+          <span>Target: Hip Capsule</span>
+          <span>8 reps per side</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="exercise-card" data-category="lower">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Calf+Raise" title="ACE Calf Rockers" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Lower Leg Prep</span>
+        <h3>16. Heel-to-Toe Rockers</h3>
+        <p class="cue-text">Stand upright and roll smoothly from your heels (lifting toes) up onto the balls of your feet to warm calves and shins.</p>
+        <div class="card-meta">
+          <span>Target: Calves / Tibialis</span>
+          <span>15 smooth rocks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17 -->
+    <div class="exercise-card" data-category="lower">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Bodyweight+Squat" title="ACE Shallow Squats" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Knee Lubrication</span>
+        <h3>17. Shallow Air Squats (Quarter Depth)</h3>
+        <p class="cue-text">Keep feet grounded and track knees over toes. Dip 4–6 inches to pump synovial fluid to the patella without loading joints[cite: 2].</p>
+        <div class="card-meta">
+          <span>Target: Quadriceps / Knees</span>
+          <span>10 reps</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18 -->
+    <div class="exercise-card" data-category="lower">
+      <div class="media-box">
+        <iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=ACE+Fitness+Ankle+Mobility" title="ACE Ankle Mobility" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="exercise-body">
+        <span class="badge badge-high">Ankle Capsule</span>
+        <h3>18. Ankle Circles & Alphabets</h3>
+        <p class="cue-text">Lift one foot off the floor and trace full rotational circles or letters A–M with your big toe to loosen the ankle joint.</p>
+        <div class="card-meta">
+          <span>Target: Ankle Complex</span>
+          <span>10 circles each way</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  function filterCards(category) {
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const cards = document.querySelectorAll('.exercise-card');
+    cards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
