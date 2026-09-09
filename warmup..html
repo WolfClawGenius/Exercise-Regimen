@@ -98,23 +98,36 @@
 
 <header>
   <div class="nav-container">
-    <a href="index.html" class="logo">FitOver50 & Nutrition</a>
+    <a href="index.html" class="logo">Fitness & Nutrition</a>
     <nav>
       <a href="index.html">Home</a>
-      <div class="nav-subgroup">
-        <a href="landing.html">Exercise Library</a>
-        <div class="nav-submenu">
-          <a href="warmup..html" class="active">Warmups</a>
+      <details class="nav-group" open>
+        <summary class="active">Training</summary>
+        <div class="nav-menu">
+          <div class="nav-subgroup">
+            <a href="landing.html">Exercise Library</a>
+            <div class="nav-submenu">
+              <a href="warmup..html" class="active">Warmups</a>
+            </div>
+          </div>
+          <a href="overview.html">Circuit Info</a>
+          <a href="circuit.html">Workout</a>
+          <a href="exercises.html">Exercises</a>
+          <a href="28-challenge.html">28 Day Challenge</a>
         </div>
-      </div>
-      <a href="circuit.html">Workout</a>
-      <a href="exercises.html">Exercises</a>
-      <a href="meals.html">Meal Plan</a>
-      <a href="grocery.html">Grocery List</a>
-      <a href="prep.html">Prep Guide</a>
+      </details>
+      <details class="nav-group">
+        <summary>Nutrition</summary>
+        <div class="nav-menu">
+          <a href="meals.html">Meal Plan</a>
+          <a href="grocery.html">Grocery List</a>
+          <a href="prep.html">Prep Guide</a>
+        </div>
+      </details>
     </nav>
   </div>
 </header>
+<script src="assets/js/nav.js"></script>
 
 <main>
   <!-- Hero Section -->
